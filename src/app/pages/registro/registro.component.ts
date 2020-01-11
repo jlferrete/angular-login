@@ -16,6 +16,8 @@ export class RegistroComponent implements OnInit {
 
   usuario: UsuarioModel;
 
+  recordarme = false;
+
   constructor( private auth: AuthService,
                private router: Router ) { }
 
@@ -43,6 +45,14 @@ export class RegistroComponent implements OnInit {
 
       console.log(resp);
       Swal.close();
+
+      if( this.recordarme) {
+        localStorage.setItem('email', this.usuario.email);
+      } else {
+         localStorage.removeItem('email');
+      }
+      
+
       this.router.navigateByUrl('/home');
 
     }, (err) => {
