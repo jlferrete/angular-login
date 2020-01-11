@@ -86,6 +86,13 @@ export class AuthService {
     return this.userToken;
   }
 
+
+  estaAutenticado(): boolean {
+
+    return this.userToken.length > 2;
+
+  }
+
 }
 
 

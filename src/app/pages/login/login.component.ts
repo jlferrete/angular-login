@@ -55,9 +55,7 @@ export class LoginComponent implements OnInit {
         localStorage.removeItem('email');
     }
 
-
-
-      this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/home');
 
     }, (err) => {
 
